@@ -1,7 +1,7 @@
 import Home from "./Home";
 import Profile from "./Profile";
 import NotFound from "./NotFound";
-import MessageFeed from "./MessageFeedgit "
+import MessageFeed from "./MessageFeed "
 
 export default {
   Home: { path: "/", component: Home },
