@@ -1,5 +1,5 @@
 import React from "react";
-import { Menu,CreateUserProfileForm, CreateUserProfilePic } from "../components";
+import { Menu,CreateUserProfileForm, CreateUserProfilePic, DeleteUserProfile } from "../components";
 import { userIsAuthenticated } from "../HOCs";
 
 class Profile extends React.Component {
@@ -10,6 +10,7 @@ class Profile extends React.Component {
         <h2>Profile</h2>
         <CreateUserProfileForm/>
         <CreateUserProfilePic/>
+        <DeleteUserProfile/>
       </>
     );
   }
