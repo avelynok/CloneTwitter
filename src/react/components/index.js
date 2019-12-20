@@ -3,7 +3,7 @@ export { default as LoginForm } from "./LoginForm";
 export { default as Menu } from "./Menu";
 export { default as MessageList} from "./MessageList";
 export { default as CreateMessageForm} from "./CreateMessageForm"
-// export { default as TrendingNewsFeed} from "./TrendingNewFeed"
+export { default as TrendingNewsFeed} from "./TrendingNewsFeed"
  export { default as CreateUserProfileForm} from "./CreateUserProfileForm"
 export { default as CreateUserProfilePic} from "./CreateUserProfilePic"
 export { default as DeleteUserProfile} from "./DeleteUserProfile"
