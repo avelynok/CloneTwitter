@@ -9,10 +9,11 @@ export { default as CreateUserProfilePic} from "./CreateUserProfilePic"
 export { default as DeleteUserProfile} from "./DeleteUserProfile";
 export { default as GoogleLogin} from "./GoogleLogin";
 export { default as GetUser} from "./GetUser";
+export { default as UpdateProfile} from "./UpdateProfile"
 
 
 // components from other packages
 export { Switch, Route, Link } from "react-router-dom";
 export { default as Spinner } from "react-spinkit";
-export {Card, Form} from "semantic-ui-react"
+export {Card, Form, Button} from "semantic-ui-react"
 
