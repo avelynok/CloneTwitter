@@ -14,3 +14,4 @@ export { default as GetUser} from "./GetUser";
 // components from other packages
 export { Switch, Route, Link } from "react-router-dom";
 export { default as Spinner } from "react-spinkit";
+export {Card} from "semantic-ui-react"

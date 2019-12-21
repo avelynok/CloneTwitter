@@ -1,7 +1,8 @@
 import React from "react";
-import { LoginForm, Menu, TrendingNewsFeed } from "../components";
+import { LoginForm, Menu, Link, TrendingNewsFeed } from "../components";
 import { userIsNotAuthenticated } from "../HOCs";
 import GoogleLogin from "../components/GoogleLogin";
+
 
 class Home extends React.Component {
   render() {
@@ -10,7 +11,7 @@ class Home extends React.Component {
         <Menu />
         <h2>Your favorite microblogging platform</h2>
         <LoginForm />
-        {/* <p>Don't have an acoount? Regiser Here</p> */}
+        <p>Don't have an account? <Link to="/createuser" > Register Here</Link></p>
         <TrendingNewsFeed/>
         <GoogleLogin/>
       </>
