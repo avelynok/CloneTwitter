@@ -1,23 +1,25 @@
-import React, { Component} from 'react'
-
+import React, { Component } from "react";
+import { Form, Button } from "../components";
 
 class CreateUserProfileForm extends Component {
-    render(){
-        return (
-            <form>
-             <label htmlFor="username">Username</label>
-            <input type = "text"/>
-            <label htmlFor="displayName">Display Name</label>
-            <input type = "text"/>
-            
-            <label htmlFor="password">Password</label>
-            <input type = "password"/>
-            <button type="submit">
-            Register Your Account
-          </button>
-            </form>
-        )
-    }
-
+  render() {
+    return (
+      <Form>
+        <Form.Field>
+          <label>Username</label>
+          <input placeholder="Enter your username" />
+        </Form.Field>
+        <Form.Field>
+          <label>Display Name</label>
+          <input placeholder= "Enter the name that you want displayed"/>
+        </Form.Field>
+        <Form.Field>
+          <label>Password</label>
+          <input placeholder="Enter your password" />
+        </Form.Field>
+        <Button type="submit">Register Your Account</Button>
+      </Form>
+    );
+  }
 }
-export default CreateUserProfileForm ;
+export default CreateUserProfileForm;
