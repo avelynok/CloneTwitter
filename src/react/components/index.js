@@ -6,7 +6,8 @@ export { default as CreateMessageForm} from "./CreateMessageForm"
 export { default as TrendingNewsFeed} from "./TrendingNewsFeed"
  export { default as CreateUserProfileForm} from "./CreateUserProfileForm"
 export { default as CreateUserProfilePic} from "./CreateUserProfilePic"
-export { default as DeleteUserProfile} from "./DeleteUserProfile"
+export { default as DeleteUserProfile} from "./DeleteUserProfile";
+export { default as UserMessages} from "./DeleteUserProfile"
 
 // components from other packages
 export { Switch, Route, Link } from "react-router-dom";

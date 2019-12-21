@@ -1,6 +1,7 @@
 import React from "react";
-import { Menu,CreateUserProfileForm, CreateUserProfilePic, DeleteUserProfile, TrendingNewsFeed } from "../components";
+import { Menu,CreateUserProfileForm, CreateUserProfilePic, DeleteUserProfile, TrendingNewsFeed, UserMessages } from "../components";
 import { userIsAuthenticated } from "../HOCs";
+
 
 class Profile extends React.Component {
   render() {
@@ -12,6 +13,7 @@ class Profile extends React.Component {
         <CreateUserProfilePic/>
         <DeleteUserProfile/>
         <TrendingNewsFeed/>
+        <UserMessages/>
       </>
     );
   }
