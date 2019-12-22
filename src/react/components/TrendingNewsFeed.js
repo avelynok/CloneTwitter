@@ -7,7 +7,7 @@ class TrendingNewsFeed extends Component {
         <Feed>
         <Feed.Event>
           <Feed.Label>
-            alt = "sample pic"
+            <img src='https://react.semantic-ui.com/images/avatar/small/elliot.jpg' alt = "sample pic" />
           </Feed.Label>
           <Feed.Content>
             <Feed.Summary>
@@ -38,10 +38,9 @@ class TrendingNewsFeed extends Component {
             </Feed.Meta>
           </Feed.Content>
         </Feed.Event>
-
         <Feed.Event>
           <Feed.Label>
-            alt = "sample pic"
+            <img src='https://react.semantic-ui.com/images/avatar/small/elliot.jpg' alt = "sample pic" />
           </Feed.Label>
           <Feed.Content>
             <Feed.Summary>
@@ -55,11 +54,9 @@ class TrendingNewsFeed extends Component {
             </Feed.Meta>
           </Feed.Content>
         </Feed.Event>
-
-
         <Feed.Event>
           <Feed.Label>
-            alt = "sample pic"
+            <img src='https://react.semantic-ui.com/images/avatar/small/elliot.jpg' alt = "sample pic" />
           </Feed.Label>
           <Feed.Content>
             <Feed.Summary>
