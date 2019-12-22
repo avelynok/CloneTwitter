@@ -1,7 +1,15 @@
 import React from "react";
-import { Menu, CreateUserProfilePic, DeleteUserProfile, TrendingNewsFeed, GetUser, Link, } from "../components";
+import {
+  Menu,
+  CreateUserProfilePic,
+  DeleteUserProfile,
+  TrendingNewsFeed,
+  GetUser,
+  Link,
+  MessageList,
+  Grid
+} from "../components";
 import { userIsAuthenticated } from "../HOCs";
-
 
 class Profile extends React.Component {
   render() {
@@ -9,13 +17,22 @@ class Profile extends React.Component {
       <>
         <Menu isAuthenticated={this.props.isAuthenticated} />
         <h2>Profile</h2>
-        <GetUser/>
-        
-        
-        <CreateUserProfilePic/>
-        <DeleteUserProfile/>
-        <TrendingNewsFeed/>
-         <Link to="/home" > Go Home</Link>
+        <Grid>
+          <Grid.Column width = {5}>
+            <GetUser />
+          </Grid.Column>
+          <Grid.Column width = {5}>
+            <MessageList />
+          </Grid.Column>
+          <Grid.Column width = {6}>
+            <TrendingNewsFeed />
+          </Grid.Column>
+        </Grid>
+
+        <CreateUserProfilePic /> 
+        <DeleteUserProfile /> 
+        {/* ^^This will be a button that removes a profile */}
+        <Link to="/home"> Go Home</Link>
       </>
     );
   }
