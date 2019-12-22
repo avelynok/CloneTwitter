@@ -44,6 +44,14 @@ export const logout = () => (dispatch, getState) => {
       });
     })
     .catch(err => {
+      //HTTP status code for unauthorized
+      if (err.statusCode === 401) {
+        dispatch({
+          type: LOGOUT.SUCCESS,
+          payload: {statusCode: 200}
+        });
+
+      }
       return Promise.reject(
         dispatch({ type: LOGOUT.FAIL, payload: err.message })
       );
