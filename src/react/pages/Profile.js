@@ -1,5 +1,5 @@
 import React from "react";
-import { Menu, CreateUserProfilePic, DeleteUserProfile, TrendingNewsFeed, GetUser, UpdateProfile } from "../components";
+import { Menu, CreateUserProfilePic, DeleteUserProfile, TrendingNewsFeed, GetUser, UpdateProfile, Link} from "../components";
 import { userIsAuthenticated } from "../HOCs";
 
 
@@ -14,6 +14,7 @@ class Profile extends React.Component {
         <DeleteUserProfile/>
         <TrendingNewsFeed/>
         <GetUser/>
+         <Link to="/home" > Go Home</Link>
       </>
     );
   }
