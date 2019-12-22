@@ -3,6 +3,7 @@ import {Feed, Icon} from "../components"
 class TrendingNewsFeed extends Component {
     render(){
         return (
+          // I'm not sure if we're going to keep this
         <Feed>
         <Feed.Event>
           <Feed.Label>
