@@ -16,7 +16,7 @@ class Profile extends React.Component {
     return (
       <>
         <Menu isAuthenticated={this.props.isAuthenticated} />
-        <h2>Profile</h2>
+        <h2>Home</h2>
         <Grid>
           <Grid.Column width = {5}>
             <GetUser />
