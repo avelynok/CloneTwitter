@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import {Card} from "../components"
 
+
 const fakeMessages = [
   {
     id: 2114,
@@ -48,7 +49,8 @@ class MessageList extends Component {
   render() {
     return fakeMessages.map(message => {
       return (
-        <Card>
+       
+        <Card >
           <Card.Content header={message.username} />
           <Card.Content description={message.text} />
           <Card.Content extra>
@@ -56,12 +58,10 @@ class MessageList extends Component {
             Created: {new Date(message.createdAt).toDateString()}
           </Card.Content>
         </Card>
+        
+        
       );
-      // <div>
-      //   <h4>{message.username}</h4>
-      //   <p>{message.text}</p>
-      //   <p>Created: {message.createdAt}</p>
-      // </div>
+      
     });
   }
 }
