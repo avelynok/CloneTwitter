@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import {Card, ToggleLikeButton, DeleteMessageButton} from "../components"
 
 
+
 const fakeMessages = [
   {
     id: 2114,
@@ -49,7 +50,8 @@ class MessageList extends Component {
   render() {
     return fakeMessages.map(message => {
       return (
-        <Card>
+       
+        <Card >
           <Card.Content header={message.username} />
           <Card.Content description={message.text} />
           <Card.Content extra>
@@ -59,6 +61,8 @@ class MessageList extends Component {
            <DeleteMessageButton />
           </Card.Content>
         </Card>
+        
+        
       );
       
     });

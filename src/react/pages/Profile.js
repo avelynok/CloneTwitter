@@ -11,6 +11,7 @@ import {
 } from "../components";
 import { userIsAuthenticated } from "../HOCs";
 
+
 class Profile extends React.Component {
   render() {
     return (
@@ -19,7 +20,7 @@ class Profile extends React.Component {
         <h2>Home</h2>
         <Grid>
           <Grid.Column width = {5}>
-            <GetUser />
+            <GetUser className = 'ui user'/>
           </Grid.Column>
           <Grid.Column width = {5}>
             <MessageList />
