@@ -18,5 +18,5 @@ export { default as ToggleLikeButton} from "./ToggleLikeButton"
 // components from other packages
 export { Switch, Route, Link } from "react-router-dom";
 export { default as Spinner } from "react-spinkit";
-export {Card, Form, Button, Image,Feed, Icon, Grid, Label} from "semantic-ui-react"
+export {Card, Form, Button, Image,Feed, Icon, Grid, Label, Header, List, Segment} from "semantic-ui-react"
 
