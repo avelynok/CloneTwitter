@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Image, List, Card, Button, Segment, Header } from "../components";
 
-class SearchBar extends Component {
+class WhoToFollow extends Component {
   render() {
     return (
       <Card>
@@ -73,4 +73,4 @@ class SearchBar extends Component {
   }
 }
 
-export default SearchBar;
+export default WhoToFollow;
