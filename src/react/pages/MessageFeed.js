@@ -1,5 +1,5 @@
 import React from "react";
-import { NavMenu, MessageList, CreateMessageForm, TrendingNewsFeed,Grid } from "../components";
+import { NavMenu, MessageList, SearchBar, TrendingNewsFeed,Grid } from "../components";
 import { userIsAuthenticated } from "../HOCs";
 
 
@@ -8,22 +8,25 @@ import { userIsAuthenticated } from "../HOCs";
   render() {
     return (
       <>
-        <NavMenu isAuthenticated={this.props.isAuthenticated} />
-        <h2>Message Feed</h2>
-        <Grid>
-          <Grid.Column width= {6}>
-       <MessageList />
-
+        
+        <Grid columns="three" divided>
+          <Grid.Column width={3}>
+          <NavMenu isAuthenticated={this.props.isAuthenticated} />
           </Grid.Column>
-         
-          <Grid.Column width = {6}>
-          <h2>Trending News</h2>
-       <TrendingNewsFeed/>
-            
-            </Grid.Column>
 
+          <Grid.Column width={9}>
+          <MessageList />
+          
+          </Grid.Column>
+
+          <Grid.Column width={4}>
+        
+          <SearchBar/>
+            <TrendingNewsFeed />
+         
+          
+          </Grid.Column>
         </Grid>
-       <CreateMessageForm />
       </>
     );
   }

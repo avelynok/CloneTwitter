@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card, Image } from "../components";
+import { Card, } from "../components";
 
 const fakeUser = {
   pictureLocation: null,
@@ -13,20 +13,17 @@ const fakeUser = {
 class GetUser extends Component {
   render() {
     return (
-      <Card>
-        <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png'  wrapped ui={false} />
+      <Card style={{ width: "100%", margin: "0" }}>
         <Card.Content>
           <Card.Header>{fakeUser.username}</Card.Header>
           <Card.Meta>
             <span className="displayName">{fakeUser.displayName}</span>
           </Card.Meta>
-          <Card.Description>
-            {fakeUser.about}
-          </Card.Description>
+          <Card.Description>{fakeUser.about}</Card.Description>
         </Card.Content>
         <Card.Content extra>
-        <p>Created: {new Date (fakeUser.createdAt).toDateString()}</p>
-       <p>Last Update: {new Date (fakeUser.updatedAt).toDateString()}</p>
+          <p>Created: {new Date(fakeUser.createdAt).toDateString()}</p>
+          <p>Last Update: {new Date(fakeUser.updatedAt).toDateString()}</p>
         </Card.Content>
       </Card>
     );
