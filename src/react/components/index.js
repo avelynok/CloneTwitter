@@ -12,11 +12,13 @@ export { default as GetUser} from "./GetUser";
 export { default as UpdateProfile} from "./UpdateProfile"
 export { default as DeleteMessageButton} from "./DeleteMessageButton"
 export { default as ToggleLikeButton} from "./ToggleLikeButton"
-
+export { default as WhoToFollow} from "./WhoToFollow"
+export { default as ProfileNewsFeed} from "./ProfileNewsFeed"
+export { default as SearchBar} from "./SearchBar"
 
 
 // components from other packages
 export { Switch, Route, Link } from "react-router-dom";
 export { default as Spinner } from "react-spinkit";
-export {Card, Form, Button, Image,Feed, Icon, Grid, Label, Header, List, Segment} from "semantic-ui-react"
+export {Card, Form, Button, Image,Feed, Icon, Grid, Label, List, Segment, Header, Embed, Sidebar, Container, Input } from "semantic-ui-react"
 

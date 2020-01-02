@@ -7,7 +7,10 @@ import {
   GetUser,
   Link,
   MessageList,
-  Grid
+  Grid,
+  WhoToFollow,
+  ProfileNewsFeed,
+  SearchBar
 } from "../components";
 import { userIsAuthenticated } from "../HOCs";
 
@@ -18,14 +21,17 @@ class Profile extends React.Component {
       <>
         <Menu isAuthenticated={this.props.isAuthenticated} />
         <h2>Home</h2>
-        <Grid>
-          <Grid.Column width = {5}>
+        <Grid columns="three" divided>
+          <Grid.Column width = {4}>
             <GetUser className = 'ui user'/>
           </Grid.Column>
-          <Grid.Column width = {5}>
+          <Grid.Column width = {8}>
+            <ProfileNewsFeed/>
             <MessageList />
           </Grid.Column>
-          <Grid.Column width = {6}>
+          <Grid.Column width = {4}>
+            <SearchBar/>
+            <WhoToFollow/>
             <TrendingNewsFeed />
           </Grid.Column>
         </Grid>
