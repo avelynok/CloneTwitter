@@ -15,6 +15,7 @@ export { default as ToggleLikeButton} from "./ToggleLikeButton"
 export { default as WhoToFollow} from "./WhoToFollow"
 export { default as ProfileNewsFeed} from "./ProfileNewsFeed"
 export { default as SearchBar} from "./SearchBar"
+export {default as HomePageFeed} from "./HomePageFeed"
 
 
 // components from other packages
