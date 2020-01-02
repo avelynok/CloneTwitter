@@ -1,4 +1,4 @@
-#menu {
+/* #menu {
   background-color: lightskyblue;
   display: flex;
   justify-content: space-between;
@@ -17,4 +17,13 @@
   color: darkblue;
   text-decoration: underline;
   cursor: pointer;
+} */
+
+
+#nav_segment{
+  float:left;
+  height: 600px;
+  width: 150px;
+  margin-top: 200px;
+  position: sticky;
 }
