@@ -19,9 +19,8 @@
   cursor: pointer;
 } */
 
-
-#nav_segment{
-  float:left;
+#nav_segment {
+  float: left;
   height: 600px;
   width: 150px;
   margin-top: 200px;
