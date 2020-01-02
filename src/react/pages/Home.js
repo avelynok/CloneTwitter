@@ -1,20 +1,17 @@
 import React from "react";
-import { LoginForm, NavMenu, Link } from "../components";
+import { LoginForm, Card, GoogleLogin } from "../components";
 import { userIsNotAuthenticated } from "../HOCs";
-import GoogleLogin from "../components/GoogleLogin";
+import "./Home.css";
 
 class Home extends React.Component {
   render() {
     return (
       <>
-        <NavMenu />
-        <h2>Your favorite microblogging platform</h2>
-        <LoginForm />
-        <p>
-          Don't have an account? <Link to="/createuser"> Register Here</Link>
-        </p>
+        <Card id="Page">
+          <LoginForm />
 
-        <GoogleLogin />
+          <GoogleLogin />
+        </Card>
       </>
     );
   }

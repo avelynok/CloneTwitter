@@ -6,7 +6,6 @@ import {
   NavMenu,
   WhoToFollow,
   SearchBar
-  
 } from "../components";
 import { userIsAuthenticated } from "../HOCs";
 
@@ -16,20 +15,17 @@ class HomePage extends React.Component {
       <>
         <Grid columns="three" divided>
           <Grid.Column width={3}>
-          <NavMenu isAuthenticated={this.props.isAuthenticated} />
+            <NavMenu isAuthenticated={this.props.isAuthenticated} />
           </Grid.Column>
 
           <Grid.Column width={9}>
-          
-            <HomePageFeed/>
+            <HomePageFeed />
           </Grid.Column>
 
           <Grid.Column width={4}>
-        
-          <SearchBar/>
+            <SearchBar />
             <TrendingNewsFeed />
-            <WhoToFollow/>
-          
+            <WhoToFollow />
           </Grid.Column>
         </Grid>
       </>
