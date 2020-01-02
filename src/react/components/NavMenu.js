@@ -17,38 +17,42 @@ class NavMenu extends React.Component {
           <div id="NavMenu-links">
             <Sidebar.Pushable as={Segment} id="nav_segment">
               <Sidebar
+              style={{ width: "100%", backgroundColor: "#e0e1e2"}}
                 as={Menu}
-                animation="push"
                 icon="labeled"
-                inverted
                 vertical
                 visible
-                width="thin"
+                width="large"
+               
               >
+                   <div id="menu">
+              <h1>Kwitter</h1>
+            </div>
                 <Link to="/homepage">
-                  Home
                   <Menu.Item as="a">
-                    <Icon name="" />
+                    <Icon name="home" />
+                    Home
                   </Menu.Item>
                 </Link>
                 <Link to="/profile/:username">
                   {" "}
-                  Profile{" "}
                   <Menu.Item as="a">
                     <Icon name="user" />
+                    Profile
                   </Menu.Item>
                 </Link>
                 <Link to="/messagefeed">
                   {" "}
-                  Message
                   <Menu.Item as="a">
                     <Icon name="envelope" />
+                    Message
                   </Menu.Item>
                 </Link>
                 <Link to="/" onClick={this.handleLogout}>
-                  Logout{" "}
+                {" "}
                   <Menu.Item as="a">
                     <Icon name="" />
+                      Logout
                   </Menu.Item>
                 </Link>
               </Sidebar>

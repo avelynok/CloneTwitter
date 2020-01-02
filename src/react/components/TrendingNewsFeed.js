@@ -4,7 +4,7 @@ import { List, Card, Segment, Header } from "../components";
 class TrendingNewsFeed extends Component {
   render() {
     return (
-      <Card >
+      <Card style={{ width: "95%"}} >
         <Segment>
           <Header as="h2">Trending Now</Header>
           <List divided relaxed>

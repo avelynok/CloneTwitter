@@ -6,39 +6,48 @@ import {
   TrendingNewsFeed,
   GetUser,
   Link,
-  MessageList,
   Grid,
   WhoToFollow,
   ProfileNewsFeed,
-  SearchBar
+  SearchBar,
+  Header,
+  Segment
 } from "../components";
 import { userIsAuthenticated } from "../HOCs";
-
 
 class Profile extends React.Component {
   render() {
     return (
       <>
-        <NavMenu isAuthenticated={this.props.isAuthenticated} />
-        <h2>Home</h2>
         <Grid columns="three" divided>
-          <Grid.Column width = {1}>
-           
+          <Grid.Column width={3}>
+            <NavMenu isAuthenticated={this.props.isAuthenticated} />
           </Grid.Column>
-          <Grid.Column width = {8}>
-          <GetUser className = 'ui user'/>
-            <ProfileNewsFeed/>
-            <MessageList />
+          <Grid.Column width={9}>
+            <Header as="h2" style={{ margin: "10px 0 20px 17px" }}>
+            Tiffany Mclean
+            </Header>
+
+            <Segment style={{ width: "100%" }}>
+              <img
+                style={{ width: "100%" }}
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRalGGSdoRdKp8AkjPgZSliyFpv49iR75VkCFTzjBdq71OMondE&s"
+                alt=""
+              />
+
+              <GetUser className="ui user" />
+              <ProfileNewsFeed />
+            </Segment>
           </Grid.Column>
-          <Grid.Column width = {4}>
-            <SearchBar/>
-            <WhoToFollow/>
+          <Grid.Column width={4}>
+            <SearchBar />
+            <WhoToFollow />
             <TrendingNewsFeed />
           </Grid.Column>
         </Grid>
 
-        <CreateUserProfilePic /> 
-        <DeleteUserProfile /> 
+        <CreateUserProfilePic />
+        <DeleteUserProfile />
         {/* ^^This will be a button that removes a profile */}
         <Link to="/home"> Go Home</Link>
       </>

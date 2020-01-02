@@ -4,7 +4,7 @@ import { Image, List, Card, Button, Segment, Header } from "../components";
 class WhoToFollow extends Component {
   render() {
     return (
-      <Card>
+      <Card style={{ width: "95%"}}>
         <Segment>
           <List divided verticalAlign="middle" animated="middle" relaxed>
             <Header as="h2" style={{ color: "Black" }}>

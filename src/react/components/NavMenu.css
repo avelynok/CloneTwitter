@@ -18,11 +18,17 @@
   text-decoration: underline;
   cursor: pointer;
 } */
+#menu {
+  color: black;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 70px;
+}
 
 #nav_segment {
-  float: left;
-  height: 600px;
-  width: 150px;
-  margin-top: 200px;
+  width: "18%";
+  height: 500px;
+  margin-top: 135px;
   position: sticky;
+ 
 }
