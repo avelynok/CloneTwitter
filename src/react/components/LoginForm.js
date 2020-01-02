@@ -1,7 +1,8 @@
 import React from "react";
-import { Spinner } from ".";
+import { Spinner,Segment, Form, Button, Link,  } from ".";
 import { withAsyncAction } from "../HOCs";
 import "./LoginForm.css";
+
 
 class LoginForm extends React.Component {
   state = { username: "", password: "" };
@@ -18,29 +19,61 @@ class LoginForm extends React.Component {
   render() {
     const { loading, error } = this.props;
     return (
-      <React.Fragment>
-        <form id="login-form" onSubmit={this.handleLogin}>
-          <label htmlFor="username">Username</label>
-          <input
-            type="text"
-            name="username"
-            autoFocus
-            required
-            onChange={this.handleChange}
-          />
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            name="password"
-            required
-            onChange={this.handleChange}
-          />
-          <button type="submit" disabled={loading}>
-            Login
-          </button>
-        </form>
-        {loading && <Spinner name="circle" color="blue" />}
-        {error && <p style={{ color: "red" }}>{error.message}</p>}
+      <React.Fragment >
+       
+        <Segment
+          inverted
+          id="login"
+          style={{ width: "50%", margin: "150px auto",   backgroundColor:"transparent" }}
+        >
+          <Form
+            inverted
+            id="login-form"
+            style={{ width: "60%", margin: "80px auto" }}
+            onSubmit={this.handleLogin}
+          >
+            <h2 style={{"margin-bottom": "40px", opacity: "1"}}>
+              Your favorite social platform!
+            </h2>
+            <Form.Group widths="equal"    style={{opacity: "1"  }}>
+              <Form.Input
+              
+                fluid
+                type="text"
+                name="username"
+                label="Username"
+                placeholder="Username"
+                autoFocus
+                required
+               
+                onChange={this.handleChange}
+              />
+            </Form.Group>
+            <Form.Group widths="equal">
+              <Form.Input
+                fluid
+                type="password"
+                label="Password"
+                name="password"
+                placeholder="Password"
+                required
+                onChange={this.handleChange}
+              />
+            </Form.Group>
+
+            <Button type="submit" primary disabled={loading}>
+              {" "}
+              Login{" "}
+            </Button>
+            <h5 style={{ "margin-top": "30px" }}>
+              Don't have an account? <Link to="/createuser">Join Kwitter</Link>{" "}
+              today.
+            </h5>
+          </Form>
+          {loading && <Spinner name="circle" color="blue" />}
+          {error && <p style={{ color: "red" }}>{error.message}</p>}
+        </Segment>
+     
       </React.Fragment>
     );
   }

@@ -25,16 +25,9 @@ class Profile extends React.Component {
           </Grid.Column>
           <Grid.Column width={9}>
             <Header as="h2" style={{ margin: "10px 0 20px 17px" }}>
-            Tiffany Mclean
+              Tiffany Mclean
             </Header>
-
             <Segment style={{ width: "100%" }}>
-              <img
-                style={{ width: "100%" }}
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRalGGSdoRdKp8AkjPgZSliyFpv49iR75VkCFTzjBdq71OMondE&s"
-                alt=""
-              />
-
               <GetUser className="ui user" />
               <ProfileNewsFeed />
             </Segment>
