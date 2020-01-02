@@ -9,7 +9,8 @@ import {
   MessageList,
   Grid,
   WhoToFollow,
-  ProfileNewsFeed
+  ProfileNewsFeed,
+  SearchBar
 } from "../components";
 import { userIsAuthenticated } from "../HOCs";
 
@@ -29,6 +30,7 @@ class Profile extends React.Component {
             <MessageList />
           </Grid.Column>
           <Grid.Column width = {4}>
+            <SearchBar/>
             <WhoToFollow/>
             <TrendingNewsFeed />
           </Grid.Column>
