@@ -3,6 +3,7 @@ import {
   HomePageFeed,
   Grid,
   TrendingNewsFeed,
+  Menu
 } from "../components";
 import { userIsAuthenticated } from "../HOCs";
 
@@ -12,7 +13,7 @@ class HomePage extends React.Component {
       <>
         <Grid columns="three" divided>
           <Grid.Column width={3}>
-        
+        <Menu/>
           </Grid.Column>
 
           <Grid.Column width={9}>
