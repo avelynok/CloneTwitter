@@ -8,7 +8,8 @@ import {
   Link,
   MessageList,
   Grid,
-  WhoToFollow
+  WhoToFollow,
+  ProfileNewsFeed
 } from "../components";
 import { userIsAuthenticated } from "../HOCs";
 
@@ -24,6 +25,7 @@ class Profile extends React.Component {
             <GetUser className = 'ui user'/>
           </Grid.Column>
           <Grid.Column width = {8}>
+            <ProfileNewsFeed/>
             <MessageList />
           </Grid.Column>
           <Grid.Column width = {4}>
