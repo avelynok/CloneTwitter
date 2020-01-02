@@ -1,5 +1,5 @@
 import React from "react";
-import { Menu, MessageList, CreateMessageForm, TrendingNewsFeed,Grid } from "../components";
+import { NavMenu, MessageList, CreateMessageForm, TrendingNewsFeed,Grid } from "../components";
 import { userIsAuthenticated } from "../HOCs";
 
 
@@ -8,7 +8,7 @@ import { userIsAuthenticated } from "../HOCs";
   render() {
     return (
       <>
-        <Menu isAuthenticated={this.props.isAuthenticated} />
+        <NavMenu isAuthenticated={this.props.isAuthenticated} />
         <h2>Message Feed</h2>
         <Grid>
           <Grid.Column width= {6}>

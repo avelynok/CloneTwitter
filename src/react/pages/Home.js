@@ -1,19 +1,20 @@
 import React from "react";
-import { LoginForm, Menu, Link, TrendingNewsFeed } from "../components";
+import { LoginForm, NavMenu, Link } from "../components";
 import { userIsNotAuthenticated } from "../HOCs";
 import GoogleLogin from "../components/GoogleLogin";
-
 
 class Home extends React.Component {
   render() {
     return (
       <>
-        <Menu />
+        <NavMenu />
         <h2>Your favorite microblogging platform</h2>
         <LoginForm />
-        <p>Don't have an account? <Link to="/createuser" > Register Here</Link></p>
-        <TrendingNewsFeed/>
-        <GoogleLogin/>
+        <p>
+          Don't have an account? <Link to="/createuser"> Register Here</Link>
+        </p>
+
+        <GoogleLogin />
       </>
     );
   }

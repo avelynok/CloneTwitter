@@ -3,7 +3,10 @@ import {
   HomePageFeed,
   Grid,
   TrendingNewsFeed,
-  Menu
+  NavMenu,
+  WhoToFollow,
+  SearchBar
+  
 } from "../components";
 import { userIsAuthenticated } from "../HOCs";
 
@@ -13,16 +16,19 @@ class HomePage extends React.Component {
       <>
         <Grid columns="three" divided>
           <Grid.Column width={3}>
-        <Menu/>
+          <NavMenu isAuthenticated={this.props.isAuthenticated} />
           </Grid.Column>
 
           <Grid.Column width={9}>
+          
             <HomePageFeed/>
           </Grid.Column>
 
           <Grid.Column width={4}>
         
+          <SearchBar/>
             <TrendingNewsFeed />
+            <WhoToFollow/>
           
           </Grid.Column>
         </Grid>

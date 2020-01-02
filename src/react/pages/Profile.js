@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  Menu,
+  NavMenu,
   CreateUserProfilePic,
   DeleteUserProfile,
   TrendingNewsFeed,
@@ -19,13 +19,14 @@ class Profile extends React.Component {
   render() {
     return (
       <>
-        <Menu isAuthenticated={this.props.isAuthenticated} />
+        <NavMenu isAuthenticated={this.props.isAuthenticated} />
         <h2>Home</h2>
         <Grid columns="three" divided>
-          <Grid.Column width = {4}>
-            <GetUser className = 'ui user'/>
+          <Grid.Column width = {1}>
+           
           </Grid.Column>
           <Grid.Column width = {8}>
+          <GetUser className = 'ui user'/>
             <ProfileNewsFeed/>
             <MessageList />
           </Grid.Column>
