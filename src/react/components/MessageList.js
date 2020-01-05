@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import {Card, ToggleLikeButton, DeleteMessageButton} from "../components"
-
+import {Link} from '.'
+import {connect} from 'react-redux'
 
 
 const fakeMessages = [
@@ -52,7 +53,9 @@ class MessageList extends Component {
       return (
        
         <Card >
-          <Card.Content header={message.username} />
+          <Link to={`/PrivateMessage/${this.props.user}/${message.username}`}>
+          <h4> {message.username}</h4>
+          </Link>
           <Card.Content description={message.text} />
           <Card.Content extra>
             {/* <Icon name="user" />4 Friends */}
@@ -68,4 +71,7 @@ class MessageList extends Component {
     });
   }
 }
-export default MessageList;
+const mapstatetoprops = state => {
+  return { user: state.auth.login.result.username };
+};
+export default connect(mapstatetoprops) (MessageList);
