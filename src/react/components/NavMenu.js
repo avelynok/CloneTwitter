@@ -51,7 +51,7 @@ class NavMenu extends React.Component {
                 <Link to="/" onClick={this.handleLogout}>
                 {" "}
                   <Menu.Item as="a">
-                    <Icon name="" />
+                    <Icon name="sign-out" />
                       Logout
                   </Menu.Item>
                 </Link>
