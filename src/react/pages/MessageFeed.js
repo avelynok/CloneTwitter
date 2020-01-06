@@ -8,6 +8,7 @@ import {
 } from "../components";
 import { userIsAuthenticated } from "../HOCs";
 
+
 class MessageFeed extends React.Component {
   render() {
     return (
