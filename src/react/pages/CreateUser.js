@@ -9,7 +9,7 @@ class CreateUser extends React.Component {
         <NavMenu />
         <h2>Register Your Account</h2>
         <CreateUserProfileForm />
-        <Link to = "/">Go Home </Link>
+        <Link to = "/">Return Home </Link>
       </>
     );
   }
