@@ -1,53 +1,91 @@
 import React, { Component } from "react";
-import { Form, Button, Input, Checkbox } from "../components";
+import { Form, Button, Segment, Checkbox } from "../components";
 import './CreateUserProfileForm.css'
 
 
 class CreateUserProfileForm extends Component {
   render() {
     return (
-      <Form >
-        <Form.Group widths="equal">
-          <Form.Field
-            control={Input}
-            label="Username"
-            placeholder="Enter your username"
-            className = 'username'
-          />
-          
-          <Form.Field
-            control={Input}
-            label="Display Name"
-            placeholder="Enter the name you want displayed"
-           
-          />
-
-          <Form.Field
-            control={Input}
-            label="Password"
-            type="password"
-            placeholder="Enter your password"
-            className = 'password'
+      <React.Fragment >
+       
+        <Segment
+          inverted
+          id="login"
+          style={{ width: "50%", margin: "150px auto",   backgroundColor:"black" }}
+        >
+          <Form
+            inverted
+            id="login-form"
+            style={{ width: "60%", margin: "80px auto" }}
+            onSubmit={this.handleLogin}
           >
-          </Form.Field>
-          <Form.Field
-            control={Input}
-            label="Password"
-            type="password"
-            placeholder="Confirm Your Password"
-            className = 'password'
-          >
-          </Form.Field>
-        </Form.Group>
+            <h2 style={{"margin-bottom": "20px"}}>
+              Your favorite social platform!
+            </h2>
+            <h3 style={{"margin-bottom": "40px"}}>
+             Register Your Account
+            </h3>
+            <Form.Group widths="equal"    style={{opacity: "1"  }}>
+              <Form.Input
+              
+                fluid
+                type="text"
+                name="username"
+                label="Username"
+                placeholder="Username"
+                autoFocus
+                required
+               
+                onChange={this.handleChange}
+              />
+              </Form.Group>
+              <Form.Group widths = "equal">
+              <Form.Input
+              
+              fluid
+              type="text"
+              name="displayName"
+              label="Display Name"
+              placeholder="Display Name"
+              autoFocus
+              required
+             
+              onChange={this.handleChange}
+            />
+            </Form.Group>
+            <Form.Group widths="equal">
+              <Form.Input
+                fluid
+                type="password"
+                label="Password"
+                name="password"
+                placeholder="Password"
+                required
+                onChange={this.handleChange}
+              />
+              </Form.Group>
+                <Form.Group widths="equal">
+              <Form.Input
+                fluid
+                type="password"
+                label="Confirm Password"
+                name="password"
+                placeholder="Confirm Password"
+                required
+                onChange={this.handleChange}
+              />
+            </Form.Group>
+               <Checkbox label='I agree to the Terms and Conditions' />
 
-        <Form.Field
-          control={Checkbox}
-          label="I agree to the Terms and Conditions"
-        />
-        <Form.Field control={Button} color="grey">
-          Submit
-        </Form.Field>
-      </Form>
+            <Button type="submit" style={{"margin-top": "30px"}}>
+            Submit
+            </Button>
+            
+          </Form>
+         
+        </Segment>
+     
+      </React.Fragment>
     );
   }
 }
