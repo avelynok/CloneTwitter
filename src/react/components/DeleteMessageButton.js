@@ -1,13 +1,10 @@
 import React, { Component} from 'react'
-import { Button,Icon } from 'semantic-ui-react';
+import { Button } from "../components";
 
 class DeleteMessageButton extends Component {
-    render(){
-        return <Button icon>
-        <Icon name = 'trash' />
-       
-        </Button>
-    }
+    render() {
+        return <Button icon="x" floated="top right" size="mini" />;
+      }
 
 }
 export default DeleteMessageButton;

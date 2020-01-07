@@ -1,71 +1,100 @@
 import React, { Component } from "react";
-import {Card, ToggleLikeButton, DeleteMessageButton} from "../components"
-
+import {
+  Card,
+  Image,
+  DeleteMessageButton,
+  Container 
+} from "../components";
+import './MessageList.css';
 
 
 const fakeMessages = [
   {
-    id: 2114,
-    text: "ping",
-    username: "And1drew",
-    createdAt: "2019-12-12T20:08:39.281Z",
+    id: 2127,
+    text: "adgasdgasdgasdgasdgsadg",
+    username: "slenderdan",
+    createdAt: "2019-12-20T21:32:05.707Z",
     likes: [
       {
-        id: 3140,
-        username: "Julia3434",
-        messageId: 2114,
-        createdAt: "2019-12-12T20:54:47.629Z"
-      },
-      {
-        id: 3141,
-        username: "And1drew",
-        messageId: 2114,
-        createdAt: "2019-12-12T21:33:38.977Z"
+        id: 3156,
+        username: "slenderdan",
+        messageId: 2127,
+        createdAt: "2019-12-20T21:32:09.184Z"
       }
     ]
   },
   {
-    id: 2112,
-    text: "test test",
+    id: 2126,
+    text: "as",
     username: "slenderdan",
-    createdAt: "2019-12-12T14:48:43.168Z",
+    createdAt: "2019-12-20T21:31:53.665Z",
     likes: []
   },
   {
-    id: 2111,
-    text: "test test",
-    username: "slenderdan",
-    createdAt: "2019-12-12T14:48:41.196Z",
+    id: 2124,
+    text: "yo",
+    username: "teej",
+    createdAt: "2019-12-20T17:01:28.508Z",
+    likes: []
+  },
+  {
+    id: 2121,
+    text: "Hello!",
+    username: "auser",
+    createdAt: "2019-12-20T01:31:21.566Z",
     likes: [
       {
-        id: 3130,
-        username: "slenderdan",
-        messageId: 2111,
-        createdAt: "2019-12-12T17:46:23.681Z"
+        id: 3153,
+        username: "teeej",
+        messageId: 2121,
+        createdAt: "2019-12-20T19:43:29.098Z"
       }
     ]
+  },
+  {
+    id: 2120,
+    text: "hello",
+    username: "taylorhurt",
+    createdAt: "2019-12-19T18:49:38.169Z",
+    likes: []
   }
 ];
+
 class MessageList extends Component {
   render() {
     return fakeMessages.map(message => {
       return (
+        <Card.Group >
+        
+            <Card.Content className="conversation-list-item"> 
+              <Image
+              className="conversation-photo"
+               
+             
+                src="https://react.semantic-ui.com/images/avatar/large/steve.jpg"
+                
+              />
+             
+              <Container className="conversation-info">
+                
+              <Card.Header className="conversation-title">{message.username}
+            
+              </Card.Header>
+
+              <Card.Description className="conversation-snippet">
+                {message.text}
+              
+              </Card.Description>
+
+           
+              </Container>
+              <DeleteMessageButton/>
+            </Card.Content>
        
-        <Card >
-          <Card.Content header={message.username} />
-          <Card.Content description={message.text} />
-          <Card.Content extra>
-            {/* <Icon name="user" />4 Friends */}
-            <p>Created: {new Date(message.createdAt).toDateString()}</p>
-            <ToggleLikeButton  likes = {message.likes}/>
-           <DeleteMessageButton />
-          </Card.Content>
-        </Card>
-        
-        
+        </Card.Group>
       );
-      
     });
   }
 }
+
 export default MessageList;

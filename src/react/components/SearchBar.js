@@ -1,19 +1,20 @@
 import React, { Component } from "react";
-import { Input, Container } from "../components";
-
+import { Container } from "../components";
+import './SearchBar.css';
 class SearchBar extends Component {
   render() {
-    return (
-      <Container textAlign="left">
-        <Input
-          style={{ width: "90%", margin: "15px 0" }}
-          className="icon"
-          icon="search"
-          placeholder="Search..."
-        />
-      </Container>
-    );
-  }
+      return (
+        <Container textAlign="center" className="conversation-search">
+          <input
+            style={{ width: "100%", marginBottom: "25px"  }}
+            type="search"
+            className="conversation-search-input"
+            icon="search"
+            placeholder="Search..."
+          />
+        </Container>
+      );
+    }
 }
 
 export default SearchBar;
