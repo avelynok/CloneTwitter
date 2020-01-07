@@ -22,5 +22,5 @@ export { default as SearchBar} from "./SearchBar"
 // components from other packages
 export { Switch, Route, Link } from "react-router-dom";
 export { default as Spinner } from "react-spinkit";
-export {Card, Form, Button, Image,Feed, Icon, Grid, Label, List, Segment, Header, Embed, Sidebar, Container, Input, Menu,Checkbox} from "semantic-ui-react"
+export {Card, Form, Button,Comment, Image,Feed, Icon, Grid, Label, List, Segment, Header, Embed, Sidebar, Container, Input, Menu,Checkbox} from "semantic-ui-react"
 

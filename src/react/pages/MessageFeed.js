@@ -2,8 +2,8 @@ import React from "react";
 import {
   NavMenu,
   MessageList,
+  CreateMessageForm,
   SearchBar,
-  TrendingNewsFeed,
   Grid
 } from "../components";
 import { userIsAuthenticated } from "../HOCs";
@@ -18,13 +18,15 @@ class MessageFeed extends React.Component {
             <NavMenu isAuthenticated={this.props.isAuthenticated} />
           </Grid.Column>
 
-          <Grid.Column width={9}>
+          <Grid.Column width={4}>
+          <h3 style={{ margin: "30px 0 10px 0", textAlign: "center" }}>Messages</h3>
+            <SearchBar />
             <MessageList />
           </Grid.Column>
 
-          <Grid.Column width={4}>
-            <SearchBar />
-            <TrendingNewsFeed />
+          <Grid.Column width={9}>
+            <CreateMessageForm/>
+         
           </Grid.Column>
         </Grid>
       </>

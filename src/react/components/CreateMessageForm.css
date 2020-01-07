@@ -1,0 +1,35 @@
+.compose {
+    padding: 10px;
+    align-items: center;
+    background: white;
+    border-top: 1px solid black;
+    width: 100%;
+  }
+  
+  @supports (backdrop-filter: blur(20px)) {
+    .compose {
+      border: none;
+      background-color: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(20px);
+    }
+  }
+  
+  .compose-input {
+    width: 600px;
+    border: none;
+    border-radius: 50px;
+    font-size: 14px;
+    height: 40px;
+    background: whitesmoke;
+    margin-left: 50px;
+  }
+  
+  .compose-input::placeholder {
+    opacity: 0.3;
+    color: black;
+  }
+
+  .compose-input:focus::placeholder {
+    text-align: left;
+  }
+  
