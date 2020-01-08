@@ -19,14 +19,15 @@ class MessageFeed extends React.Component {
           </Grid.Column>
 
           <Grid.Column width={4}>
-          <h3 style={{ margin: "30px 0 10px 0", textAlign: "center" }}>Messages</h3>
+            <h3 style={{ margin: "30px 0 10px 0", textAlign: "center" }}>
+              Messages
+            </h3>
             <SearchBar />
-            <MessageList />
+            <MessageList username={this.props.match.params.username} />
           </Grid.Column>
 
           <Grid.Column width={9}>
-            <CreateMessageForm/>
-         
+            <CreateMessageForm />
           </Grid.Column>
         </Grid>
       </>
