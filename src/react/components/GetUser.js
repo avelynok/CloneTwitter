@@ -16,7 +16,7 @@ import {Spinner} from "../components"
 class GetUser extends Component {
   componentDidMount() {
     this.props.getUser(this.props.username); 
-    /
+    
     
     /*sends the component to go get the date */
   }
