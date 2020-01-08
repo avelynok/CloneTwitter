@@ -28,7 +28,7 @@ class Profile extends React.Component {
               Tiffany Mclean
             </Header>
             <Segment style={{ width: "100%" }}>
-              <GetUser className="ui user" />
+              <GetUser className="ui user" username={this.props.match.params.username} />
               <ProfileNewsFeed />
             </Segment>
           </Grid.Column>

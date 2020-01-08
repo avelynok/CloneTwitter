@@ -15,7 +15,7 @@ import {Spinner} from "../components"
 // };
 class GetUser extends Component {
   componentDidMount() {
-    this.props.getUser("another_test"); 
+    this.props.getUser(this.props.username); 
     // password is the same as username
     
     /*sends the component to go get the date */
