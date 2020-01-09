@@ -17,17 +17,16 @@ class NavMenu extends React.Component {
           <div id="NavMenu-links">
             <Sidebar.Pushable as={Segment} id="nav_segment">
               <Sidebar
-              style={{ width: "100%", backgroundColor: "#e0e1e2"}}
+                style={{ width: "100%", backgroundColor: "#e0e1e2" }}
                 as={Menu}
                 icon="labeled"
                 vertical
                 visible
-                width="large"
-               
+                width="wide"
               >
-                   <div id="menu">
-              <h1>Kwitter</h1>
-            </div>
+                <div id="menu">
+                  <h1>Kwitter</h1>
+                </div>
                 <Link to="/homepage">
                   <Menu.Item as="a">
                     <Icon name="home" />
@@ -49,10 +48,10 @@ class NavMenu extends React.Component {
                   </Menu.Item>
                 </Link>
                 <Link to="/" onClick={this.handleLogout}>
-                {" "}
+                  {" "}
                   <Menu.Item as="a">
                     <Icon name="sign-out" />
-                      Logout
+                    Logout
                   </Menu.Item>
                 </Link>
               </Sidebar>

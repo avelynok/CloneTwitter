@@ -18,15 +18,14 @@ class CreateUserProfileForm extends Component {
             style={{ width: "60%", margin: "80px auto" }}
             onSubmit={this.handleLogin}
           >
-            <h2 style={{ "margin-bottom": "20px", color: "white" }}>
+            <h2 style={{ "": "20px", color: "white" }}>
               Your favorite social platform!
             </h2>
-            <h3 style={{ "margin-bottom": "40px", color: "white" }}>
+            <h3 style={{ "marginBottom": "40px", color: "white" }}>
               Register Your Account
             </h3>
             <Form.Group widths="equal">
               <Form.Input
-              
                 fluid
                 type="text"
                 name="username"
@@ -73,7 +72,7 @@ class CreateUserProfileForm extends Component {
             </Form.Group>
             <Checkbox label="I agree to the Terms and Conditions" />
 
-            <Button type="submit" style={{ "margin-top": "30px" }}>
+            <Button type="submit" style={{ "marginTop": "30px" }}>
               Submit
             </Button>
           </Form>

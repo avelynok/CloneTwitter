@@ -25,10 +25,13 @@ class Profile extends React.Component {
           </Grid.Column>
           <Grid.Column width={9}>
             <Header as="h2" style={{ margin: "10px 0 20px 17px" }}>
-              Tiffany Mclean
+            Tiffany McLean
             </Header>
             <Segment style={{ width: "100%" }}>
-              <GetUser className="ui user" username={this.props.match.params.username} />
+              <GetUser
+                className="ui user"
+                Tiffany McLean
+              />
               <ProfileNewsFeed />
             </Segment>
           </Grid.Column>

@@ -161,7 +161,7 @@ class CreateMessageForm extends Component {
               labelPosition="left"
               icon="send"
               primary
-              style={{ "background-color": "#111" }}
+              style={{ "backgroundColor": "#111" }}
             />
           </Container>
         </>
