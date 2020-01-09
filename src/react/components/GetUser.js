@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Card, Image, Container } from "../components";
-import { withAsyncAction } from "../HOCs";
+import { withAsyncAction} from "../HOCs";
 import { Spinner } from "../components";
 import "./GetUser.css";
 
@@ -8,6 +8,7 @@ class GetUser extends Component {
   componentDidMount() {
     this.props.getUser(this.props.username);
   }
+  
   render() {
     if (this.props.result === null) {
       return <Spinner name="circle" color="blue" />;
@@ -72,15 +73,19 @@ class GetUser extends Component {
   }
 }
 
-/*
 
-mapStateToProps
-  loading
-  error
-  result
 
-mapDispatchToProps
-  getUser
-  */
+// const mapStateToProps = state => {
+//   return {
+//     loggedInUser: state.auth.login.result.username
+//   }
+// }
+//   loading
+//   error
+//   result
+
+// mapDispatchToProps
+//   getUser
+  
 
 export default withAsyncAction("users", "getUser")(GetUser);
