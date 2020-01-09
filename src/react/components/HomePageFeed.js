@@ -46,20 +46,20 @@ class HomePageFeed extends Component {
         </Header>
         <Feed>
           <Container
-            style={{ height: "150px", width: "100%", "margin-bottom": "100px" }}
+            style={{ height: "150px", width: "100%", "marginBottom": "100px" }}
           >
             <Card
               style={{
                 height: "180px",
                 width: "100%",
                 padding: "20px",
-                "background-color": ""
+                "backgroundColor": ""
               }}
             >
               <Form reply>
                 <Form.TextArea
                   placeholder="What is going on?"
-                  style={{ "font-size": "19px" }}
+                  style={{ "fontSize": "19px" }}
                 />
                 <Button.Group
                   basic

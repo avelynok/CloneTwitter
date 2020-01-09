@@ -5,7 +5,7 @@ class ProfileNewsFeed extends Component {
   render() {
     return (
       <>
-        <Feed style={{ "margin-top": "85px" }}>
+        <Feed style={{ "marginTop": "85px" }}>
           <Feed.Event>
             <Feed.Label>
               <img

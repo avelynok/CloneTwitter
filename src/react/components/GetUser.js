@@ -1,14 +1,12 @@
 import React, { Component } from "react";
 import { Card, Image, Container } from "../components";
-import "./GetUser.css";
 import { withAsyncAction } from "../HOCs";
 import { Spinner } from "../components";
+import "./GetUser.css";
 
 class GetUser extends Component {
   componentDidMount() {
     this.props.getUser(this.props.username);
-
-    /*sends the component to go get the date */
   }
   render() {
     if (this.props.result === null) {

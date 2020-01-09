@@ -4,7 +4,9 @@ import { GETUSER } from "../actionTypes";
 const url = domain + "/users";
 
 export const getUser = username => dispatch => {
-  dispatch({ type: GETUSER.START });
+  dispatch({
+    type: GETUSER.START
+  });
 
   return fetch(url + "/" + username, {
     method: "GET",
