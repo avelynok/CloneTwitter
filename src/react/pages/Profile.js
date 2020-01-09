@@ -30,7 +30,7 @@ class Profile extends React.Component {
             <Segment style={{ width: "100%" }}>
               <GetUser
                 className="ui user"
-                Tiffany McLean
+               username = {this.props.match.params.username}
               />
               <ProfileNewsFeed />
             </Segment>

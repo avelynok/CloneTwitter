@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from ".";
 import { Sidebar, Segment, Menu, Icon } from ".";
 import "./NavMenu.css";
-import { withAsyncAction } from "../HOCs";
+import { withAsyncAction, connect } from "../HOCs";
 
 class NavMenu extends React.Component {
   handleLogout = event => {
@@ -33,7 +33,7 @@ class NavMenu extends React.Component {
                     Home
                   </Menu.Item>
                 </Link>
-                <Link to="/profile/:username">
+                <Link to={"/profile/" + this.props.username }>
                   {" "}
                   <Menu.Item as="a">
                     <Icon name="user" />
@@ -63,4 +63,11 @@ class NavMenu extends React.Component {
   }
 }
 
-export default withAsyncAction("auth", "logout")(NavMenu);
+const mapStateToProps = state => {
+  return {
+    username: state.auth.login.result.username
+  }
+
+}
+
+export default connect(mapStateToProps)(withAsyncAction("auth", "logout")(NavMenu));
