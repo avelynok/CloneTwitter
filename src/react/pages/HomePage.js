@@ -5,7 +5,8 @@ import {
   TrendingNewsFeed,
   NavMenu,
   WhoToFollow,
-  SearchBar
+  SearchBar,
+  MessageList
 } from "../components";
 import { userIsAuthenticated } from "../HOCs";
 
@@ -20,6 +21,7 @@ class HomePage extends React.Component {
 
           <Grid.Column width={9}>
             <HomePageFeed />
+            <MessageList />
           </Grid.Column>
 
           <Grid.Column width={4}>
