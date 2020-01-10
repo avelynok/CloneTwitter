@@ -11,34 +11,37 @@ import {
   Card,
   Container,
 } from "../components";
+import { connect } from "../HOCs"
+import {createMessage} from "../../redux/"
 
 class HomePageFeed extends Component {
-  state = { log: [] };
-
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name });
-
-  handleClick = () =>
-    this.updateLog(
-      "Need To set it up to display post ttyped in input box + user profile pic "
-    );
-
-  handleKeyPress = e => {
-    if (e.charCode === 32 || e.charCode === 13) {
-      // Prevent the default action to stop scrolling when space is pressed
-      e.preventDefault();
-      this.updateLog();
-    }
+  state = {
+    messageText: ""
   };
 
-  updateLog = message =>
-    this.setState(prevState => ({ log: [message, ...prevState.log] }));
+  handleClick = event => {
+    this.props.createMessage(this.state.messageText);
+    this.setState({ messageText: "" }); 
+  };
 
-    
+  // handleKeyPress = e => {
+  //   if (e.charCode === 32 || e.charCode === 13) {
+  //     // Prevent the default action to stop scrolling when space is pressed
+  //     e.preventDefault();
+  //     this.updateLog();
+  //   }
+  // };
+
+  handleChangeMessage = event => {
+    this.setState({ messageText: event.target.value });
+  };
+
+  // updateLog = message =>
+  //   this.setState(prevState => ({ log: [message, ...prevState.log] }));
 
   render() {
-    const { log} = this.state;
-
-
+    // const { log } = this.state;
+    
     return (
       <>
         <Header as="h2" style={{ margin: "10px 0 20px 0" }}>
@@ -46,26 +49,24 @@ class HomePageFeed extends Component {
         </Header>
         <Feed>
           <Container
-            style={{ height: "150px", width: "100%", "marginBottom": "100px" }}
+            style={{ height: "150px", width: "100%", marginBottom: "100px" }}
           >
             <Card
               style={{
                 height: "180px",
                 width: "100%",
                 padding: "20px",
-                "backgroundColor": ""
+                backgroundColor: ""
               }}
             >
               <Form reply>
                 <Form.TextArea
                   placeholder="What is going on?"
-                  style={{ "fontSize": "19px" }}
+                  style={{ fontSize: "19px" }}
+                  onChange={this.handleChangeMessage}
+                  value = {this.state.messageText}
                 />
-                <Button.Group
-                  basic
-                  compact
-                  floated="left"
-                >
+                <Button.Group basic compact floated="left">
                   <Button icon>
                     <Icon name="microphone" />
                   </Button>
@@ -77,8 +78,9 @@ class HomePageFeed extends Component {
                   </Button>
                 </Button.Group>
                 <Button
+                  type = "submit"
                   onClick={this.handleClick}
-                  onKeyPress={this.handleKeyPress}
+                  // onKeyPress={this.handleKeyPress}
                   compact
                   floated="right"
                 >
@@ -87,21 +89,20 @@ class HomePageFeed extends Component {
               </Form>
             </Card>
           </Container>
-         
 
           <Feed.Event>
-
-
-
             <Feed.Label>
-              <img src="https://react.semantic-ui.com/images/avatar/small/elliot.jpg" alt=""/>
+              <img
+                src="https://react.semantic-ui.com/images/avatar/small/elliot.jpg"
+                alt=""
+              />
             </Feed.Label>
             <Feed.Content>
               <Feed.Summary>
                 <Feed.User>Elliot Fu</Feed.User>
-                {log.map((e, i) => (
+                {/* {log.map((e, i) => (
                   <p key={i}>{e}</p>
-                ))}
+                ))} */}
                 <Feed.Date>1 Hour Ago</Feed.Date>
               </Feed.Summary>
               <Feed.Meta>
@@ -118,7 +119,10 @@ class HomePageFeed extends Component {
 
           <Feed.Event>
             <Feed.Label>
-              <img src="https://react.semantic-ui.com/images/avatar/small/elliot.jpg" alt=""/>
+              <img
+                src="https://react.semantic-ui.com/images/avatar/small/elliot.jpg"
+                alt=""
+              />
             </Feed.Label>
             <Feed.Content>
               <Feed.Summary>
@@ -134,18 +138,28 @@ class HomePageFeed extends Component {
           </Feed.Event>
 
           <Feed.Event>
-            <Feed.Label image="https://react.semantic-ui.com/images/avatar/small/helen.jpg" alt=""/>
+            <Feed.Label
+              image="https://react.semantic-ui.com/images/avatar/small/helen.jpg"
+              alt=""
+            />
             <Feed.Content>
               <Feed.Summary>
-                <a href="#!">Helen Troy</a> added <Link to="#">2 new illustrations</Link>
+                <a href="#!">Helen Troy</a> added{" "}
+                <Link to="#">2 new illustrations</Link>
                 <Feed.Date>4 days ago</Feed.Date>
               </Feed.Summary>
               <Feed.Extra images>
                 <a href="#!">
-                  <img src="https://react.semantic-ui.com/images/wireframe/image.png"alt="" />
+                  <img
+                    src="https://react.semantic-ui.com/images/wireframe/image.png"
+                    alt=""
+                  />
                 </a>
                 <a href="#!">
-                  <img src="https://react.semantic-ui.com/images/wireframe/image.png" alt=""/>
+                  <img
+                    src="https://react.semantic-ui.com/images/wireframe/image.png"
+                    alt=""
+                  />
                 </a>
               </Feed.Extra>
               <Feed.Meta>
@@ -197,15 +211,22 @@ class HomePageFeed extends Component {
             <Feed.Label image="https://react.semantic-ui.com/images/avatar/small/justen.jpg" />
             <Feed.Content>
               <Feed.Summary>
-                <a href="#!">Justen Kitsune</a> added <a href="#!">2 new photos</a> of you
+                <a href="#!">Justen Kitsune</a> added{" "}
+                <a href="#!">2 new photos</a> of you
                 <Feed.Date>4 days ago</Feed.Date>
               </Feed.Summary>
               <Feed.Extra images>
                 <a href="#!">
-                  <img src="https://react.semantic-ui.com/images/wireframe/image.png" alt=""/>
+                  <img
+                    src="https://react.semantic-ui.com/images/wireframe/image.png"
+                    alt=""
+                  />
                 </a>
                 <p>
-                  <img src="https://react.semantic-ui.com/images/wireframe/image.png" alt=""/>
+                  <img
+                    src="https://react.semantic-ui.com/images/wireframe/image.png"
+                    alt=""
+                  />
                 </p>
               </Feed.Extra>
               <Feed.Meta>
@@ -218,7 +239,10 @@ class HomePageFeed extends Component {
           </Feed.Event>
           <Feed.Event>
             <Feed.Label>
-              <img src="https://react.semantic-ui.com/images/avatar/small/elliot.jpg" alt=""/>
+              <img
+                src="https://react.semantic-ui.com/images/avatar/small/elliot.jpg"
+                alt=""
+              />
             </Feed.Label>
             <Feed.Content>
               <Feed.Summary>
@@ -237,15 +261,22 @@ class HomePageFeed extends Component {
             <Feed.Label image="https://react.semantic-ui.com/images/avatar/small/helen.jpg" />
             <Feed.Content>
               <Feed.Summary>
-                <a href="#!">Helen Troy</a> added <Link to="#">2 new illustrations</Link>
+                <a href="#!">Helen Troy</a> added{" "}
+                <Link to="#">2 new illustrations</Link>
                 <Feed.Date>4 days ago</Feed.Date>
               </Feed.Summary>
               <Feed.Extra images>
                 <a href="#!">
-                  <img src="https://react.semantic-ui.com/images/wireframe/image.png" alt=""/>
+                  <img
+                    src="https://react.semantic-ui.com/images/wireframe/image.png"
+                    alt=""
+                  />
                 </a>
                 <a href="#!">
-                  <img src="https://react.semantic-ui.com/images/wireframe/image.png" alt=""/>
+                  <img
+                    src="https://react.semantic-ui.com/images/wireframe/image.png"
+                    alt=""
+                  />
                 </a>
               </Feed.Extra>
               <Feed.Meta>
@@ -297,15 +328,22 @@ class HomePageFeed extends Component {
             <Feed.Label image="https://react.semantic-ui.com/images/avatar/small/justen.jpg" />
             <Feed.Content>
               <Feed.Summary>
-                <a href="#!">Justen Kitsune</a> added <a href="#!">2 new photos</a> of you
+                <a href="#!">Justen Kitsune</a> added{" "}
+                <a href="#!">2 new photos</a> of you
                 <Feed.Date>4 days ago</Feed.Date>
               </Feed.Summary>
               <Feed.Extra images>
                 <a href="#!">
-                  <img src="https://react.semantic-ui.com/images/wireframe/image.png" alt=""/>
+                  <img
+                    src="https://react.semantic-ui.com/images/wireframe/image.png"
+                    alt=""
+                  />
                 </a>
                 <p>
-                  <img src="https://react.semantic-ui.com/images/wireframe/image.png" alt=""/>
+                  <img
+                    src="https://react.semantic-ui.com/images/wireframe/image.png"
+                    alt=""
+                  />
                 </p>
               </Feed.Extra>
               <Feed.Meta>
@@ -321,5 +359,10 @@ class HomePageFeed extends Component {
     );
   }
 }
-
-export default HomePageFeed;
+  
+const mapDispatchToProps = {
+    createMessage
+  }
+  
+  
+export default connect(null, mapDispatchToProps)(HomePageFeed);
