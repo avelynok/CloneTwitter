@@ -5,7 +5,7 @@ export { default as MessageList} from "./MessageList";
 export { default as CreateMessageForm} from "./CreateMessageForm"
 export { default as TrendingNewsFeed} from "./TrendingNewsFeed"
  export { default as CreateUserProfileForm} from "./CreateUserProfileForm"
-export { default as CreateUserProfilePic} from "./CreateUserProfilePic"
+
 export { default as DeleteUserProfile} from "./DeleteUserProfile";
 export { default as GoogleLogin} from "./GoogleLogin";
 export { default as GetUser} from "./GetUser";

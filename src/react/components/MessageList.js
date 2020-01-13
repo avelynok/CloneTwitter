@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Card, Image, DeleteMessageButton, Container } from "../components";
 import "./MessageList.css";
 import { withAsyncAction } from "../HOCs";
+import ToggleLikeButton from "./ToggleLikeButton";
 
 
 class MessageList extends Component {
@@ -29,6 +30,7 @@ class MessageList extends Component {
                   {message.text}
                 </Card.Description>
               </Container>
+              <ToggleLikeButton />
               <DeleteMessageButton />
             </Card.Content>
           </Card.Group>
