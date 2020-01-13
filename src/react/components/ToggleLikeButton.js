@@ -1,17 +1,29 @@
 
 import React, { Component} from 'react'
-import {Button, Icon, Label} from "../components"
+import { Button, Icon, Label } from "../components"
+import { addLikes} from "../../redux/actionCreators"
+import {connect} from "../HOCs"
 
 class ToggleLikeButton extends Component {
+  state = {
+    messageID: 0
+  }
+
+  handleClick = event => {
+    this.props.addLikes(this.state.messageID)
+    
+  }
     render(){
         return(
-        <Button as='div' labelPosition='right'>
+          <Button as='div' labelPosition='right'
+          onClick = {this.handleClick}>
         <Button color='red'>
           <Icon name='heart' />
           Like
         </Button>
         <Label as='a' basic color='red' pointing='left'>
-          {this.props.likes.length}
+              {/* {this.props.likes.length} */}
+              {this.props.addLikes}
         </Label>
         </Button>
     //   {/* return <Button>Add/Remove Like</Button> */}
@@ -19,4 +31,8 @@ class ToggleLikeButton extends Component {
     }
 
 }
-export default ToggleLikeButton;
+
+const mapDispatchToProps = {
+  addLikes
+}
+export default connect (null, mapDispatchToProps)(ToggleLikeButton);

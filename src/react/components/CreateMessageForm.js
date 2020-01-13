@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Button, Comment, Container, Icon, Spinner } from "../components";
-import { connect } from "../HOCs";
-import { createMessage } from "../../redux/";
+import { withAsyncAction } from "../HOCs";
+
 import "./CreateMessageForm.css";
 
 class CreateMessageForm extends Component {
@@ -22,7 +22,7 @@ class CreateMessageForm extends Component {
   };
   render() {
     // const { log } = this.state;
-
+  const { loading, error } = this.props;
     return (
       <>
         {/*Might need to be wrapped in a form tag so we can press enter to submit as well as click */}
@@ -48,7 +48,7 @@ class CreateMessageForm extends Component {
           </h3>
 
           <Comment.Group style={{ width: "100%", padding: "20px" }}>
-            <div>
+            {/* <div>
               <Comment>
                 <Comment.Avatar src="https://react.semantic-ui.com/images/avatar/small/matt.jpg" />
                 <Comment.Content>
@@ -136,16 +136,14 @@ class CreateMessageForm extends Component {
                   <Comment.Metadata>
                     <div>Just now</div>
                   </Comment.Metadata>
-                  <Comment.Text>Elliot you are always so right :)</Comment.Text>
+                  <Comment.Text>Elliot you are always so right</Comment.Text>
                   <Comment.Actions>
                     <Comment.Action></Comment.Action>
                   </Comment.Actions>
                 </Comment.Content>
               </Comment>
-              {/* {log.map((e, i) => (
-                  <p key={i}>{e}</p>
-                ))} */}
-            </div>
+              
+            {/* </div> */}
             <div className="compose">
               <input
                 type="text"
@@ -160,29 +158,19 @@ class CreateMessageForm extends Component {
           <Button
             type="submit"
             onClick={this.handleClick}
-            disabled = {this.props.loading}
+            disabled={this.props.loading}
             content="Send"
             labelPosition="left"
             icon="send"
             primary
             style={{ backgroundColor: "#111" }}
           />
-          {this.props.loading && <Spinner name="circle" color="white" />}
-          {this.props.error && <p style={{ color: "red" }}>{this.props.error.message}</p>}
+          {loading && <Spinner name="circle" color="white" />}
+          {error && <p style={{ color: "red" }}>{error.message}</p>}
+          
         </Container>
       </>
     );
   }
 }
-const mapStateToProps = state => {
-
-  return{
-    loading: state.messages.createMessage.loading,
-    error: state.messages.createMessage.error
-  }
-}
-const mapDispatchToProps = {
-  createMessage
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(CreateMessageForm);
+export default withAsyncAction("messages","createMessage" ) (CreateMessageForm)

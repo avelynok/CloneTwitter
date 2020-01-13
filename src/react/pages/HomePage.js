@@ -20,7 +20,7 @@ class HomePage extends React.Component {
           </Grid.Column>
 
           <Grid.Column width={9}>
-            <HomePageFeed />
+            <HomePageFeed /> 
             <MessageList />
           </Grid.Column>
 

@@ -1,7 +1,7 @@
 import React from "react";
 import {
   NavMenu,
-  CreateUserProfilePic,
+
   DeleteUserProfile,
   TrendingNewsFeed,
   GetUser,
@@ -42,7 +42,7 @@ class Profile extends React.Component {
           </Grid.Column>
         </Grid>
 
-        <CreateUserProfilePic />
+       
         <DeleteUserProfile />
         {/* ^^This will be a button that removes a profile */}
         <Link to="/home"> Go Home</Link>

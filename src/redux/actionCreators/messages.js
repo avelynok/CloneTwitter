@@ -24,7 +24,7 @@ export const getMessages = username => dispatch => {
     });
 };
 
-export const createMessage = messageText => (dispatch, getState) => {
+const _createMessage = messageText => (dispatch, getState) => {
   dispatch({
     type: CREATEMESSAGE.START
   });
@@ -49,3 +49,9 @@ export const createMessage = messageText => (dispatch, getState) => {
       );
     });
 };
+
+
+//chained action creators
+export const createMessage = (messageText) => (dispatch, getState) => {
+  return dispatch(_createMessage(messageText)).then(() => dispatch(getMessages()))
+}
