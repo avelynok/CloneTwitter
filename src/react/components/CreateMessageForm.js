@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Comment, Container, Icon } from "../components";
+import { Button, Comment, Container, Icon, Spinner } from "../components";
 import { connect } from "../HOCs";
 import { createMessage } from "../../redux/";
 import "./CreateMessageForm.css";
@@ -88,7 +88,7 @@ class CreateMessageForm extends Component {
                   <Comment.Metadata>
                     <div>Just now</div>
                   </Comment.Metadata>
-                  <Comment.Text>Elliot you are always so right :)</Comment.Text>
+                  <Comment.Text>Elliot you are always so right</Comment.Text>
                   <Comment.Actions>
                     <Comment.Action></Comment.Action>
                   </Comment.Actions>
@@ -158,22 +158,31 @@ class CreateMessageForm extends Component {
           </Comment.Group>
 
           <Button
-            type = "submit"
+            type="submit"
             onClick={this.handleClick}
+            disabled = {this.props.loading}
             content="Send"
             labelPosition="left"
             icon="send"
             primary
             style={{ backgroundColor: "#111" }}
           />
+          {this.props.loading && <Spinner name="circle" color="white" />}
+          {this.props.error && <p style={{ color: "red" }}>{this.props.error.message}</p>}
         </Container>
       </>
     );
   }
 }
+const mapStateToProps = state => {
 
+  return{
+    loading: state.messages.createMessage.loading,
+    error: state.messages.createMessage.error
+  }
+}
 const mapDispatchToProps = {
   createMessage
 };
 
-export default connect(null, mapDispatchToProps)(CreateMessageForm);
+export default connect(mapStateToProps, mapDispatchToProps)(CreateMessageForm);
