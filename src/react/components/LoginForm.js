@@ -70,7 +70,7 @@ class LoginForm extends React.Component {
               today.
             </h5>
           </Form>
-          {loading && <Spinner name="circle" color="blue" />}
+          {loading && <Spinner name="circle" color="white" />}
           {error && <p style={{ color: "red" }}>{error.message}</p>}
         </Segment>
       </React.Fragment>
