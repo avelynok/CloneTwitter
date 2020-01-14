@@ -14,7 +14,8 @@ class MessageList extends Component {
       this.props.result &&
       this.props.result.messages.map(message => {
         return (
-          <Card.Group>
+          <Card.Group
+          key = {message.id}>
             <Card.Content className="conversation-list-item">
               <Image
                 className="conversation-photo"
