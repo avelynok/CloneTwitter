@@ -9,13 +9,17 @@ class MessageList extends Component {
   componentDidMount() {
     this.props.getMessages(this.props.username);
   }
+  componentDidUpdate(prevProps) {
+    if (this.props.username !== prevProps.username) {
+      this.props.getMessages(this.props.username);
+    }
+  }
   render() {
     return (
       this.props.result &&
       this.props.result.messages.map(message => {
         return (
-          <Card.Group
-          key = {message.id}>
+          <Card.Group key={message.id}>
             <Card.Content className="conversation-list-item">
               <Image
                 className="conversation-photo"

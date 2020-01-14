@@ -3,15 +3,7 @@ import { GETUSER, DELETEUSER } from "../actionTypes";
 
 const url = domain + "/users";
 
-// export const postUser = registerData => dispatch => {
-//   return dispatch(_postUser(registerData)).then())=>
-// dispatch(
-//   login({
-//     username: registerData.username,
-//     password: registerData.password
-//     })
-//   )
-// }
+
 export const getUser = username => dispatch => {
   dispatch({
     type: GETUSER.START
