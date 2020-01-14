@@ -10,7 +10,8 @@ const createActionTypes = actionName => {
 export const LOGIN = createActionTypes("LOGIN");
 export const LOGOUT = createActionTypes("LOGOUT");
 export const GETUSER = createActionTypes("GETUSER");
-export const GETMESSAGES = createActionTypes("GETMESSAGES")
+export const GETMESSAGES = createActionTypes("GETMESSAGES");
 export const CREATEMESSAGE = createActionTypes("CREATEMESSAGE");
 export const ADDLIKES = createActionTypes("ADDLIKES");
-export const DELETEUSER = createActionTypes("DELETEUSER")
+export const DELETEUSER = createActionTypes("DELETEUSER");
+export const CREATEUSER = createActionTypes("CREATEUSER");
