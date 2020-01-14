@@ -8,12 +8,13 @@ import {
   Link,
   Grid,
   WhoToFollow,
-  ProfileNewsFeed,
+  MessageList,
   SearchBar,
   Header,
   Segment
 } from "../components";
 import { userIsAuthenticated } from "../HOCs";
+
 
 class Profile extends React.Component {
   render() {
@@ -32,7 +33,7 @@ class Profile extends React.Component {
                 className="ui user"
                 username={this.props.match.params.username}
               />
-              <ProfileNewsFeed />
+              <MessageList username={this.props.match.params.username} />
             </Segment>
           </Grid.Column>
           <Grid.Column width={4}>
@@ -42,7 +43,6 @@ class Profile extends React.Component {
           </Grid.Column>
         </Grid>
 
-       
         <DeleteUserProfile />
         {/* ^^This will be a button that removes a profile */}
         <Link to="/home"> Go Home</Link>
