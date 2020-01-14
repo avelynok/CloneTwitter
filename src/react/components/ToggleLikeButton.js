@@ -2,7 +2,7 @@
 import React, { Component} from 'react'
 import { Button, Icon, Label } from "../components"
 import { addLikes} from "../../redux/actionCreators"
-import {connect} from "../HOCs"
+import {connect, withAsyncAction} from "../HOCs"
 
 class ToggleLikeButton extends Component {
   state = {
@@ -34,5 +34,10 @@ class ToggleLikeButton extends Component {
 
 const mapDispatchToProps = {
   addLikes
+  // messageID: state.messages.getMessages.result.messages.id
 }
-export default connect (null, mapDispatchToProps)(ToggleLikeButton);
+// export default connect(null, mapDispatchToProps)(ToggleLikeButton);
+
+export default connect(null, mapDispatchToProps)(
+  withAsyncAction("auth", "logout")(ToggleLikeButton)
+);
