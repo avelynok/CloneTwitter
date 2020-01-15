@@ -47,7 +47,7 @@ class MessageList extends Component {
     );
   }
 }
-
+//trying
 const mapStateToProps = state => {
   return {
     user: state.users.getUser.result
