@@ -15,7 +15,8 @@ export { default as ToggleLikeButton} from "./ToggleLikeButton"
 export { default as WhoToFollow} from "./WhoToFollow"
 export { default as HomePageFeed} from "./HomePageFeed"
 export { default as ProfileNewsFeed} from "./ProfileNewsFeed"
-export { default as SearchBar} from "./SearchBar"
+export { default as SearchBar } from "./SearchBar"
+export { default as UploadProfileImage} from "./UploadProfileImage"
 
 
 

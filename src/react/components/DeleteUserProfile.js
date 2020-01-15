@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Button } from "../components"
-import {withAsyncAction} from "../HOCs"
+import {withAsyncAction, connect} from "../HOCs"
 
 
 class DeleteUserProfile extends Component {
@@ -15,4 +15,10 @@ class DeleteUserProfile extends Component {
     }
 
 }
-export default withAsyncAction ("users", "deleteUser")(DeleteUserProfile) ;
+
+const mapStateToProps = state => {
+    return {
+        loggedInUsername: state.auth.login.result.username
+    }
+}
+export default connect(mapStateToProps) (withAsyncAction ("users", "deleteUser")(DeleteUserProfile));
