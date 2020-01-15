@@ -1,10 +1,18 @@
 import React, { Component } from "react";
-import { Card, Image, Container, UploadProfileImage } from "../components";
+import { Card, Image, Container, Menu,  UploadProfileImage } from "../components";
 import { withAsyncAction} from "../HOCs";
 import { Spinner } from "../components";
 import "./GetUser.css";
 
 class GetUser extends Component {
+
+  state = { activeItem: 'home' }
+
+  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+
+  
+
+
   componentDidMount() {
     this.props.getUser(this.props.username);
   }
@@ -16,12 +24,16 @@ class GetUser extends Component {
   }
   
   render() {
+
+    const { activeItem } = this.state
+
+
     if (this.props.result === null) {
       return <Spinner name="circle" color="blue" />;
     }
     const user = this.props.result.user;
     return (
-      <Card style={{ width: "100%", margin: "0" }}>
+      <Card style={{ width: "100%", marginBottom: "90px" }}>
         <Container id="background" style={{ height: "200px", width: "100%" }}>
           <Card.Content>
             <Container
@@ -86,6 +98,27 @@ class GetUser extends Component {
           <p>Last Update: {new Date(user.updatedAt).toDateString()}</p>
         </Card.Content>
         <UploadProfileImage username={this.props.username} />
+
+        <Menu inverted  style={{ width: "100%", backgroundColor:"#95b9c7"  }} >
+        <Menu.Item
+        style={{ width: "33.3%", color:"black" }}
+          name='Kweets'
+          active={activeItem === 'Kweets'}
+          onClick={this.handleItemClick}
+        />
+        <Menu.Item
+         style={{ width: "33.3%", color:"black" }}
+          name='Likes'
+          active={activeItem === 'Likes'}
+          onClick={this.handleItemClick}
+        />
+        <Menu.Item
+         style={{ width: "33.3%", color:"black", margin: "0 auto" }}
+          name='Shared'
+          active={activeItem === 'Shared'}
+          onClick={this.handleItemClick}
+        />
+      </Menu>
       </Card>
     );
   }

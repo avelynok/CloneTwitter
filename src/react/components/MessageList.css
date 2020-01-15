@@ -3,6 +3,7 @@
     align-items: center;
     padding: 10px;
     width: 100%;
+    
   }
   
   .conversation-list-item:hover {
@@ -11,22 +12,22 @@
   }
   
   .conversation-photo {
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     object-fit: cover;
     margin-right: 10px;
   }
   
   .conversation-title {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
     text-transform: capitalize;
     margin: 0;
   }
   
   .conversation-snippet {
-    font-size: 14px;
-    color: #888;
+    font-size: 16px;
+    color: grey;
     margin: 0;
   }

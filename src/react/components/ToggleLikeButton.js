@@ -13,12 +13,13 @@ class ToggleLikeButton extends Component {
   };
   render() {
     return (
-      <Button as="div" labelPosition="right" onClick={this.handleClick}>
-        <Button color="red">
-          <Icon name="heart" />
-          Like
+      <Button as="div" labelPosition="right" size='mini' compact onClick={this.handleClick}
+      style={{marginTop: "15px" }}>
+        <Button size='mini'  style={{ padding: "8px 14px", backgroundColor:"#95b9c7"  }}>
+          <Icon name="heart"/>
+       
         </Button>
-        <Label as="a" basic color="red" pointing="left">
+        <Label as="a" basic color="" pointing="left" size='mini'>
           {/* {this.props.likes.length} */}
           {this.props.addLikes}
         </Label>

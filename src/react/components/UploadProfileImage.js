@@ -1,6 +1,7 @@
 import React from "react";
 import { withAsyncAction, connect } from "../HOCs";
 
+
 class UploadProfileImage extends React.Component {
   handleUploadUserPicture = event => {
     console.log("upload activated");
@@ -13,7 +14,7 @@ class UploadProfileImage extends React.Component {
     return (
       this.props.username === this.props.loggedInUsername && (
         <form onSubmit={this.handleUploadUserPicture}>
-          <input type="file" name="picture" />
+          <input floated='right' type ="file" icon="file" name="picture" />
           <input type="submit" value="Upload Picture" />
         </form>
       )

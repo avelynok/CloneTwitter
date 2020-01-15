@@ -67,6 +67,7 @@ class HomePageFeed extends Component {
                   // onKeyPress={this.handleKeyPress}
                   compact
                   floated="right"
+                  style={{backgroundColor:"#95b9c7"  }}
                 >
                   Kweet
                 </Button>
