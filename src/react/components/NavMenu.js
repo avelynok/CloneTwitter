@@ -15,14 +15,24 @@ class NavMenu extends React.Component {
       <div id="menu">
         {this.props.isAuthenticated && (
           <div id="NavMenu-links">
-            <Sidebar.Pushable as={Segment} id="nav_segment">
+            <Sidebar.Pushable as={Segment} id="nav_segment"
+             style={{
+              width: "18%",
+              height: "500px",
+              margin: "135px 0",
+              position: "fixed",
+              top: "0px"
+            }}>
               <Sidebar
-                style={{ width: "100%", backgroundColor: "#e0e1e2" }}
+                style={{ width: "100%", backgroundColor:"#95b9c7",  position: "fixed",
+                top: "0px" }}
+                
                 as={Menu}
                 icon="labeled"
                 vertical
                 visible
                 width="wide"
+               
               >
                 <div id="menu">
                   <h1>Kwitter</h1>

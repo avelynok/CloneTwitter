@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Card, Image, DeleteMessageButton, Container } from "../components";
 import "./MessageList.css";
-import { withAsyncAction } from "../HOCs";
+import { withAsyncAction, connect } from "../HOCs";
 import ToggleLikeButton from "./ToggleLikeButton";
 
 
@@ -19,23 +19,26 @@ class MessageList extends Component {
       this.props.result &&
       this.props.result.messages.map(message => {
         return (
-          <Card.Group key={message.id}>
+          <Card.Group key={message.id} >
             <Card.Content className="conversation-list-item">
               <Image
+             
                 className="conversation-photo"
-                src="https://react.semantic-ui.com/images/avatar/large/steve.jpg"
+                // src={
+                //  this.props.user.user.pictureLocation
+                //     ? "https://kwitter-api.herokuapp.com" + this.props.user.user.pictureLocation
+                //     : "http://simpleicon.com/wp-content/uploads/user1.svg"
+                // }
               />
-
               <Container className="conversation-info">
                 <Card.Header className="conversation-title">
                   {message.username}
                 </Card.Header>
-
                 <Card.Description className="conversation-snippet">
                   {message.text}
                 </Card.Description>
+                <ToggleLikeButton />
               </Container>
-              <ToggleLikeButton />
               <DeleteMessageButton />
             </Card.Content>
           </Card.Group>
@@ -45,4 +48,12 @@ class MessageList extends Component {
   }
 }
 
-export default withAsyncAction("messages", "getMessages")(MessageList);
+const mapStateToProps = state => {
+  return {
+    user: state.users.getUser.result
+  }
+}
+export default connect(mapStateToProps)(withAsyncAction("messages", "getMessages")(MessageList));
+
+
+

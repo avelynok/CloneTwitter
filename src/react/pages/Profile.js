@@ -1,11 +1,9 @@
 import React from "react";
 import {
   NavMenu,
-
   DeleteUserProfile,
   TrendingNewsFeed,
   GetUser,
-  Link,
   Grid,
   WhoToFollow,
   MessageList,
@@ -27,6 +25,7 @@ class Profile extends React.Component {
           <Grid.Column width={9}>
             <Header as="h2" style={{ margin: "10px 0 20px 17px" }}>
               {this.props.match.params.username}
+              {this.props.username === this.props.loggedInUsername && <DeleteUserProfile username={this.props.username}/>}
             </Header>
             <Segment style={{ width: "100%" }}>
               <GetUser
@@ -43,9 +42,8 @@ class Profile extends React.Component {
           </Grid.Column>
         </Grid>
 
-        {this.props.username === this.props.loggedInUsername && <DeleteUserProfile username={this.props.username}/>}
+        
        
-        <Link to="/home"> Go Home</Link>
       </>
     );
   }

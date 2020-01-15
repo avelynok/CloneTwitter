@@ -11,7 +11,7 @@ class DeleteUserProfile extends Component {
         }
     }
     render(){
-        return <Button onClick ={this.handleDeleteUser}>Delete Profile</Button>
+        return <Button floated='right' onClick ={this.handleDeleteUser}>Delete Account</Button>
     }
 
 }

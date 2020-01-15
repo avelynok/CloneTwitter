@@ -7,13 +7,13 @@ class WhoToFollow extends Component {
       <Card style={{ width: "95%"}}>
         <Segment>
           <List divided verticalAlign="middle" animated="middle" relaxed>
-            <Header as="h2" style={{ color: "Black" }}>
+            <Header as="h2" style={{ color: "Black", }}>
               Who To Follow
             </Header>
 
             <List.Item>
               <List.Content floated="right">
-                <Button>Add</Button>
+                <Button style={{backgroundColor:"#95b9c7" }}>Add</Button>
               </List.Content>
               <Image
                 size={"massive"}
@@ -24,7 +24,7 @@ class WhoToFollow extends Component {
             </List.Item>
             <List.Item>
               <List.Content floated="right">
-                <Button>Add</Button>
+                <Button style={{backgroundColor:"#95b9c7" }}>Add</Button>
               </List.Content>
               <Image
                 size={"massive"}
@@ -35,7 +35,7 @@ class WhoToFollow extends Component {
             </List.Item>
             <List.Item>
               <List.Content floated="right">
-                <Button>Add</Button>
+                <Button style={{backgroundColor:"#95b9c7" }}>Add</Button>
               </List.Content>
               <Image
                 size={"massive"}
@@ -46,7 +46,7 @@ class WhoToFollow extends Component {
             </List.Item>
             <List.Item>
               <List.Content floated="right">
-                <Button>Add</Button>
+                <Button style={{backgroundColor:"#95b9c7" }}>Add</Button>
               </List.Content>
               <Image
                 size={"massive"}
@@ -57,7 +57,7 @@ class WhoToFollow extends Component {
             </List.Item>
             <List.Item>
               <List.Content floated="right">
-                <Button>Add</Button>
+                <Button style={{backgroundColor:"#95b9c7" }}>Add</Button>
               </List.Content>
               <Image
                 size={"massive"}

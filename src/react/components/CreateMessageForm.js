@@ -66,7 +66,7 @@ class CreateMessageForm extends Component {
             labelPosition="left"
             icon="send"
             primary
-            style={{ backgroundColor: "#111" }}
+            style={{ backgroundColor:"#95b9c7"}}
           />
           {loading && <Spinner name="circle" color="white" />}
           {error && <p style={{ color: "red" }}>{error.message}</p>}

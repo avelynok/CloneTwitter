@@ -1,6 +1,7 @@
 import { domain, jsonHeaders, handleJsonResponse } from "./constants";
 import {
   GETUSER,
+  GETUSERS,
   DELETEUSER,
   CREATEUSER,
   UPLOADPROFILEIMAGE
@@ -116,4 +117,27 @@ export const uploadProfileImage = formElement => (dispatch, getState) => {
     const username = getState().auth.login.result.username;
     return dispatch(getUser(username));
   });
+};
+
+
+
+export const getUsers = () => dispatch => {
+  dispatch({
+    type: GETUSERS.START
+  });
+
+  return fetch(url , {
+    method: "GET",
+    headers: jsonHeaders
+  })
+    .then(handleJsonResponse)
+    .then(result => {
+      return dispatch({
+        type: GETUSERS.SUCCESS,
+        payload: result
+      });
+    })
+    .catch(err => {
+      return Promise.reject(dispatch({ type: GETUSERS.FAIL, payload: err }));
+    });
 };
