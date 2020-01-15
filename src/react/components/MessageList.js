@@ -1,15 +1,22 @@
 import React, { Component } from "react";
-import { Card, Image, DeleteMessageButton, Container, Button, Icon, Label } from "../components";
+import {
+  Card,
+  Image,
+  DeleteMessageButton,
+  Container,
+  Button,
+  Icon,
+  Label
+} from "../components";
 import "./MessageList.css";
 import { withAsyncAction, connect } from "../HOCs";
 
-import {getUsers} from "../../redux/actionCreators"
-
+import { getUsers } from "../../redux/actionCreators";
 
 class MessageList extends Component {
   componentDidMount() {
     this.props.getMessages(this.props.username);
-    this.props.getUsers(this.props.users)
+    this.props.getUsers(this.props.users);
   }
   componentDidUpdate(prevProps) {
     if (this.props.username !== prevProps.username) {
@@ -25,6 +32,13 @@ class MessageList extends Component {
             <Card.Content className="conversation-list-item">
               <Image
                 className="conversation-photo"
+               
+               
+                src={
+                 this.props.user.user.pictureLocation
+                    ? "https://kwitter-api.herokuapp.com" + this.props.user.user.pictureLocation
+                    : "http://simpleicon.com/wp-content/uploads/user1.svg"
+                }
 
                 // src={
                 //  this.props.user.user.pictureLocation
@@ -72,9 +86,8 @@ const mapStateToProps = state => {
   return {
     user: state.users.getUser.result,
     getUsers
-  }
-}
-export default connect(mapStateToProps)(withAsyncAction("messages", "getMessages")(MessageList));
-
-
-
+  };
+};
+export default connect(mapStateToProps)(
+  withAsyncAction("messages", "getMessages")(MessageList)
+);
