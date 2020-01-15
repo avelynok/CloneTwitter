@@ -11,7 +11,7 @@ export { default as GoogleLogin} from "./GoogleLogin";
 export { default as GetUser} from "./GetUser";
 
 export { default as DeleteMessageButton} from "./DeleteMessageButton"
-export { default as ToggleLikeButton} from "./ToggleLikeButton"
+
 export { default as WhoToFollow} from "./WhoToFollow"
 export { default as HomePageFeed} from "./HomePageFeed"
 export { default as ProfileNewsFeed} from "./ProfileNewsFeed"
