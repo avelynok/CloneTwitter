@@ -15,3 +15,4 @@ export const CREATEMESSAGE = createActionTypes("CREATEMESSAGE");
 export const ADDLIKES = createActionTypes("ADDLIKES");
 export const DELETEUSER = createActionTypes("DELETEUSER");
 export const CREATEUSER = createActionTypes("CREATEUSER");
+export const UPLOADPROFILEIMAGE = createActionTypes("UPLOADPROFILEIMAGE");

@@ -43,8 +43,8 @@ class Profile extends React.Component {
           </Grid.Column>
         </Grid>
 
-        <DeleteUserProfile />
-        {/* ^^This will be a button that removes a profile */}
+        {this.props.username === this.props.loggedInUsername && <DeleteUserProfile username={this.props.username}/>}
+       
         <Link to="/home"> Go Home</Link>
       </>
     );

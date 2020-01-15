@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Card, Image, Container } from "../components";
+import { Card, Image, Container, UploadProfileImage } from "../components";
 import { withAsyncAction} from "../HOCs";
 import { Spinner } from "../components";
 import "./GetUser.css";
@@ -29,7 +29,12 @@ class GetUser extends Component {
               style={{ width: "100%", marginTop: "25px" }}
             >
               <Image
-                src="https://react.semantic-ui.com/images/avatar/large/matthew.png"
+                style={{ maxWidth: "20em" }}
+                src={
+                  user.pictureLocation
+                    ? "https://kwitter-api.herokuapp.com" + user.pictureLocation
+                    : "http://simpleicon.com/wp-content/uploads/user1.svg"
+                }
                 size="tiny"
                 circular
               />
@@ -64,7 +69,13 @@ class GetUser extends Component {
                   textShadow: "5px 6px 10px black"
                 }}
               >
-                {user.about}
+                {user.about ? (
+                  <p>{user.about}</p>
+                ) : (
+                  <p style={{ color: "white" }}>
+                    Please tell us about yourself
+                  </p>
+                )}
               </Card.Description>
             </Container>
           </Card.Content>
@@ -74,6 +85,7 @@ class GetUser extends Component {
           <p>Created: {new Date(user.createdAt).toDateString()}</p>
           <p>Last Update: {new Date(user.updatedAt).toDateString()}</p>
         </Card.Content>
+        <UploadProfileImage username={this.props.username} />
       </Card>
     );
   }
