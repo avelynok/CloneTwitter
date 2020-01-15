@@ -30,9 +30,8 @@ export const getUser = username => dispatch => {
     });
 };
 export const deleteUser = () => (dispatch, getState) => {
-  dispatch({
-    type: DELETEUSER.START
-  });
+  dispatch({ type: DELETEUSER.START });
+
   const { username, token } = getState().auth.login.result;
 
   return fetch(url + "/" + username, {
@@ -50,12 +49,6 @@ export const deleteUser = () => (dispatch, getState) => {
       return Promise.reject(dispatch({ type: DELETEUSER.FAIL, payload: err }));
     });
 };
-
-// export const deleteUser = () => dispatch => {
-//   return dispatch(_deleteUser()).then(() => {
-//     dispatch(push("/"));
-//   });
-// };
 
 const _createUser = (username, displayName, password) => dispatch => {
   dispatch({

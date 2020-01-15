@@ -21,7 +21,6 @@ class UploadProfileImage extends React.Component {
   }
 }
 
-
 const mapStateToProps = state => {
   return {
     loggedInUsername: state.auth.login.result.username
