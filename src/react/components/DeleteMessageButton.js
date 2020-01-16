@@ -1,10 +1,29 @@
-import React, { Component} from 'react'
+import React, { Component } from "react";
 import { Button } from "../components";
+import { withAsyncAction, connect} from "../HOCs"
 
 class DeleteMessageButton extends Component {
-    render() {
-        return <Button icon="x" floated="top right" size="mini" />;
-      }
+  handleDeleteMessage = event => {
+    const confirmed = window.confirm(
+      "Are you sure you want to delete this message?"
+    );
+    if (confirmed) {
+      this.props.deleteMessage(this.props.messageId);
+    }
+  };
 
+  render() {
+    return <Button onClick = {this.handleDeleteMessage} icon="x" floated="right" size="mini" />;
+  }
 }
-export default DeleteMessageButton;
+const mapStateToProps = state => {
+  return {
+    loggedInUsername: state.auth.login.result.username
+  };
+};
+
+export default connect(mapStateToProps)(
+  withAsyncAction("messages", "deleteMessage")(DeleteMessageButton)
+);
+
+

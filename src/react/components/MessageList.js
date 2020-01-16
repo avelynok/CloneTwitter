@@ -33,7 +33,7 @@ class MessageList extends Component {
               <Image
                 className="conversation-photo"
                
-                src="https://react.semantic-ui.com/images/avatar/large/steve.jpg"
+                 src="https://react.semantic-ui.com/images/avatar/large/steve.jpg"
                 // src={
                 //  this.props.user.user.pictureLocation
                 //     ? "https://kwitter-api.herokuapp.com" + this.props.user.user.pictureLocation
@@ -67,7 +67,7 @@ class MessageList extends Component {
                   >
                     <Icon name="heart" />
                   </Button>
-                  <Label as="a" basic color="" pointing="left" size="mini">
+                  <Label as="a" basic  pointing="left" size="mini">
                     {/* {this.props.likes.length} */}
                     {this.props.addLikes}
                   </Label>
