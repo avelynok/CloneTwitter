@@ -33,12 +33,12 @@ class MessageList extends Component {
               <Image
                 className="conversation-photo"
                
-               
-                src={
-                 this.props.user.user.pictureLocation
-                    ? "https://kwitter-api.herokuapp.com" + this.props.user.user.pictureLocation
-                    : "http://simpleicon.com/wp-content/uploads/user1.svg"
-                }
+                src="https://react.semantic-ui.com/images/avatar/large/steve.jpg"
+                // src={
+                //  this.props.user.user.pictureLocation
+                //     ? "https://kwitter-api.herokuapp.com" + this.props.user.user.pictureLocation
+                //     : "http://simpleicon.com/wp-content/uploads/user1.svg"
+                // }
 
                 // src={
                 //  this.props.user.user.pictureLocation
