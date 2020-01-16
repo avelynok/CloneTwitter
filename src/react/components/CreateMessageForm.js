@@ -28,9 +28,9 @@ class CreateMessageForm extends Component {
           <h3 style={{ margin: "30px 0 55px 0", textAlign: "center" }}>
             Thread
             <Button.Group
-              style={{ border: "none", padding: "0 20px" }}
+              style={{ border: "none", padding: "0 20px" , color:"white"}}
               basic
-              color="white"
+              
               floated="right"
             >
               <Button icon style={{ border: "none", padding: "0 20px" }}>

@@ -38,28 +38,28 @@ class NavMenu extends React.Component {
                   <h1>Kwitter</h1>
                 </div>
                 <Link to="/homepage">
-                  <Menu.Item as="a">
+                  <Menu.Item>
                     <Icon name="home" />
                     Home
                   </Menu.Item>
                 </Link>
                 <Link to={"/profile/" + this.props.username }>
                   {" "}
-                  <Menu.Item as="a">
+                  <Menu.Item >
                     <Icon name="user" />
                     Profile
                   </Menu.Item>
                 </Link>
                 <Link to="/messagefeed">
                   {" "}
-                  <Menu.Item as="a">
+                  <Menu.Item >
                     <Icon name="envelope" />
                     Message
                   </Menu.Item>
                 </Link>
                 <Link to="/" onClick={this.handleLogout}>
                   {" "}
-                  <Menu.Item as="a">
+                  <Menu.Item >
                     <Icon name="sign-out" />
                     Logout
                   </Menu.Item>
