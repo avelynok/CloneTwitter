@@ -1,6 +1,4 @@
-import React, { Component } from "react"
-""
-
+import React, { Component } from "react";
 
 const fakeMessages = [
   {
@@ -46,16 +44,14 @@ const fakeMessages = [
   }
 ];
 class MessageList extends Component {
-    render(){
-        return  fakeMessages.map(message => (
-            <div>
-                <h4>{message.username}</h4>
-                <p>{message.text}</p>
-                <p>Created: {message.createdAt}</p>
-            </div>
-        )
-        )
-    }
-
+  render() {
+    return fakeMessages.map(message => (
+      <div>
+        <h4>{message.username}</h4>
+        <p>{message.text}</p>
+        <p>Created: {message.createdAt}</p>
+      </div>
+    ));
+  }
 }
 export default MessageList;
